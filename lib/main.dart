@@ -4,6 +4,7 @@ import 'package:parkit/pages/login_page.dart';
 import 'package:parkit/pages/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:parkit/pages/parking_details.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 int? initScreen;
@@ -30,17 +31,19 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.deepPurple,
           scaffoldBackgroundColor: Colors.white),
       darkTheme: ThemeData(brightness: Brightness.dark),
-      initialRoute: '/forgotpass',
-      routes: {
-        "/forgotpass": (context) => HomePage(),
-      },
+      // initialRoute: '/forgotpass',
+      // routes: {
+      //   "/forgotpass": (context) => HomePage(),
+      // },
+      initialRoute: '/parking_details',
       // initialRoute:
       //     initScreen == 0 || initScreen == null ? '/onboard' : '/home',
-      // routes: {
-      //   "/onboard": (context) => OnBoardingScreen(),
-      //   "/home": (context) => HomePage(),
-      //   "/login": (context) => LoginPage(),
-      // },
+      routes: {
+        "/onboard": (context) => OnBoardingScreen(),
+        // "/home": (context) => HomePage(),
+        "/login": (context) => LoginPage(),
+        "/parking_details": (context) => ParkingDetails()
+      },
     );
   }
 }

@@ -5,7 +5,7 @@ class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
 
   @override
-  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+  State<OnBoardingScreen> get createState => _OnBoardingScreenState();
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
@@ -68,14 +68,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ElevatedButton(
                   onPressed: () {
                     // print(_pageController.page);
-                    if (_pageController.page == 2.0) {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => HomePage()));
-                    } else {
-                      _pageController.nextPage(
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.ease);
-                    }
+                    // if (_pageController.page == 2.0) {
+                    //   Navigator.push(context,
+                    //       MaterialPageRoute(builder: (_) => HomePage()));
+                    // } else {
+                    //   _pageController.nextPage(
+                    //       duration: const Duration(milliseconds: 300),
+                    //       curve: Curves.ease);
+                    // }
                   },
                   child: Text("Next"),
                   style: ButtonStyle(
@@ -96,12 +96,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => HomePage(),
-                      ),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (_) => HomePage(),
+                    //   ),
+                    // );
                   },
                   child: Text("Skip"),
                   style: ButtonStyle(
