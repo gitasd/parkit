@@ -7,7 +7,7 @@ class ExpandedTextWidget extends StatefulWidget {
   const ExpandedTextWidget({Key? key, required this.text}) : super(key: key);
 
   @override
-  State<ExpandedTextWidget> get createState => _MyWidgetState();
+  State<ExpandedTextWidget> createState() => _MyWidgetState();
 }
 
 class _MyWidgetState extends State<ExpandedTextWidget> {

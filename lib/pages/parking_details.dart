@@ -1,4 +1,3 @@
-import 'dart:html';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,7 +7,7 @@ import 'package:parkit/pages/exapanded_widget.dart';
 
 class ParkingDetails extends StatefulWidget {
   @override
-  State<ParkingDetails> get createState => _ParkingDetailsState();
+  State<ParkingDetails> createState() => _ParkingDetailsState();
 }
 
 class _ParkingDetailsState extends State<ParkingDetails> {

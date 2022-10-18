@@ -1,6 +1,9 @@
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:parkit/pages/forget_password.dart';
 import 'package:parkit/pages/home_page.dart';
+import 'package:parkit/pages/landing_page.dart';
 import 'package:parkit/pages/login_page.dart';
+import 'package:parkit/pages/hero_page.dart';
 import 'package:parkit/pages/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -35,14 +38,16 @@ class MyApp extends StatelessWidget {
       // routes: {
       //   "/forgotpass": (context) => HomePage(),
       // },
-      initialRoute: '/parking_details',
+      initialRoute: '/landing_page',
       // initialRoute:
       //     initScreen == 0 || initScreen == null ? '/onboard' : '/home',
       routes: {
         "/onboard": (context) => OnBoardingScreen(),
         // "/home": (context) => HomePage(),
         "/login": (context) => LoginPage(),
-        "/parking_details": (context) => ParkingDetails()
+        "/parking_details": (context) => ParkingDetails(),
+        "/landing_page": (context) => LandingPage(),
+        "/check_live_location": (context) => MapNew()
       },
     );
   }
