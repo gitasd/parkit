@@ -1,4 +1,3 @@
-import 'package:parkit/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -69,8 +68,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   onPressed: () {
                     // print(_pageController.page);
                     // if (_pageController.page == 2.0) {
-                    //   Navigator.push(context,
-                    //       MaterialPageRoute(builder: (_) => HomePage()));
+                      // Navigator.push(context,
+                      //     MaterialPageRoute(builder: (_) => HomePage()));
                     // } else {
                     //   _pageController.nextPage(
                     //       duration: const Duration(milliseconds: 300),

@@ -1,8 +1,10 @@
-import 'package:carousel_pro/carousel_pro.dart';
+import 'package:another_carousel_pro/another_carousel_pro.dart';
+// import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:parkit/constant.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:parkit/pages/book_parking_details.dart';
 import 'package:parkit/pages/exapanded_widget.dart';
 
 class ParkingDetails extends StatefulWidget {
@@ -26,7 +28,9 @@ class _ParkingDetailsState extends State<ParkingDetails> {
         foregroundColor: Colors.black,
         elevation: 0,
         leading: BackButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
         title: Text("Parking Details"),
       ),
@@ -62,7 +66,7 @@ class _ParkingDetailsState extends State<ParkingDetails> {
         Padding(
           padding: const EdgeInsets.only(left: 16),
           child: Text(
-            "Paking Lot of San Manolia",
+            "PSIT Parking 3",
             style:
                 GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w500),
           ),
@@ -70,7 +74,7 @@ class _ParkingDetailsState extends State<ParkingDetails> {
         Padding(
           padding: const EdgeInsets.only(left: 16),
           child: Text(
-            "151 K, Kanpur Dehat, PSIT",
+            "PSIT, Kanpur Dehat, Bhauti",
             style:
                 GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w400),
           ),
@@ -208,7 +212,9 @@ class _ParkingDetailsState extends State<ParkingDetails> {
           children: [
             const Spacer(),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               child: Text("Cancel"),
               style: ButtonStyle(
                   minimumSize: MaterialStateProperty.all(
@@ -224,7 +230,12 @@ class _ParkingDetailsState extends State<ParkingDetails> {
             ),
             const Spacer(),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => BookParkingDetails()));
+                },
                 child: Text("Book Parking"),
                 style: ButtonStyle(
                   minimumSize: MaterialStateProperty.all(

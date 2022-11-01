@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:parkit/constant.dart';
 import 'package:parkit/pages/booking.dart';
 import 'package:parkit/pages/hero_page.dart';
-import 'package:parkit/pages/home_page.dart';
 import 'package:parkit/pages/profile.dart';
 import 'package:parkit/pages/saved.dart';
 
@@ -17,7 +16,14 @@ class _LandingPageState extends State<LandingPage> {
   PageController pageController = PageController();
   int _index = 0;
 
-  List<Widget> pages = [MapNew(), SavedParkingLots(), Bookings(), Profile()];
+  List<Widget> pages = [
+    MapNew(),
+    SavedParkingLots(
+      parkingTobeSaved: '',
+    ),
+    Bookings(),
+    Profile()
+  ];
   // List pages = [homepage, savedparking, booking, profile];
 
   void onPageChanged(int index) {

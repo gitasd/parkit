@@ -17,7 +17,7 @@ class ForgetPassword extends StatelessWidget {
                 children: [
                   IconButton(
                       onPressed: () {
-                        print("hii");
+                        Navigator.pop(context);
                       },
                       icon: const Icon(Icons.arrow_back)),
                   const Text(

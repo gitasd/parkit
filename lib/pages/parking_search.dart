@@ -1,22 +1,25 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class SearchParking extends SearchDelegate<String> {
-  final parkings = [
-    'Lucknow',
-    'Kanpur',
-    'Sitapur',
-    'Barabanki',
-    'Gudgaon',
-    'Delhi',
-    'Dehradun',
-    'Jaipur',
-    'Jabalpur',
-    'Jalandhar',
-    'Biswan',
-    'Jhansi',
-    'Jharkhand'
-  ];
-
+  SearchParking({required this.locationslist});
+  Set<dynamic> locationslist;
+  // final parkings = [
+  //   'Lucknow',
+  //   'Kanpur',
+  //   'Sitapur',
+  //   'Barabanki',
+  //   'Gudgaon',
+  //   'Delhi',
+  //   'Dehradun',
+  //   'Jaipur',
+  //   'Jabalpur',
+  //   'Jalandhar',
+  //   'Biswan',
+  //   'Jhansi',
+  //   'Jharkhand'
+  // ];
   final recentParkings = [
     'Jalandhar',
     'Biswan',
@@ -29,7 +32,7 @@ class SearchParking extends SearchDelegate<String> {
     return [
       IconButton(
           onPressed: () {
-            !query.isEmpty ? query = "" : close(context, "");
+            !query.isEmpty ? query = "" : close(context, '');
           },
           icon: Icon(Icons.clear))
     ];
@@ -40,7 +43,7 @@ class SearchParking extends SearchDelegate<String> {
     // leading icon on the left of the app bar
     return IconButton(
         onPressed: () {
-          close(context, "");
+          close(context, '');
         },
         icon: AnimatedIcon(
             icon: AnimatedIcons.menu_arrow, progress: transitionAnimation));
@@ -48,7 +51,7 @@ class SearchParking extends SearchDelegate<String> {
 
   @override
   Widget buildResults(BuildContext context) {
-    // show some results based on the selection
+    close(context, query);
     throw UnimplementedError();
   }
 
@@ -56,12 +59,19 @@ class SearchParking extends SearchDelegate<String> {
   Widget buildSuggestions(BuildContext context) {
     // search suggestions when someone searches for anything
     final suggestionList = query.isEmpty
-        ? recentParkings
-        : parkings
+        // ? recentParkings
+        ? locationslist.toList()
+        : locationslist
+            .toList()
             .where((p) => p.toLowerCase().startsWith(query.toLowerCase()))
             .toList();
     return ListView.builder(
       itemBuilder: (context, index) => ListTile(
+        onTap: () {
+          query = suggestionList[index];
+          close(context, query);
+          // close(context, suggestionList[index]);
+        },
         leading: Icon(Icons.local_parking),
         title: RichText(
             text: TextSpan(
