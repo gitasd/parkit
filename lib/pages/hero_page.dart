@@ -251,6 +251,7 @@ class _MapNewState extends State<MapNew>
                         Divider(
                           color: Colors.grey.withOpacity(0.5),
                           thickness: 3,
+                          
                           indent: MediaQuery.of(context).size.width * 0.4,
                           endIndent: MediaQuery.of(context).size.width * 0.4,
                         ),

@@ -5,21 +5,7 @@ import 'package:flutter/material.dart';
 class SearchParking extends SearchDelegate<String> {
   SearchParking({required this.locationslist});
   Set<dynamic> locationslist;
-  // final parkings = [
-  //   'Lucknow',
-  //   'Kanpur',
-  //   'Sitapur',
-  //   'Barabanki',
-  //   'Gudgaon',
-  //   'Delhi',
-  //   'Dehradun',
-  //   'Jaipur',
-  //   'Jabalpur',
-  //   'Jalandhar',
-  //   'Biswan',
-  //   'Jhansi',
-  //   'Jharkhand'
-  // ];
+
   final recentParkings = [
     'Jalandhar',
     'Biswan',
